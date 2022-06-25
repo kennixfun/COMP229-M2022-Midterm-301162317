@@ -1,6 +1,5 @@
 // modules required for routing
 import express from 'express';
-import { Callback, CallbackError } from 'mongoose';
 const router = express.Router();
 export default router;
 
@@ -8,7 +7,7 @@ export default router;
 import book from '../Models/books';
 
 /* GET books List page. READ */
-router.get('/books', (req, res, next) => 
+router.get('/', (req, res, next) => 
 {
   // find all books in the books collection
   book.find( (err, books) => {
@@ -47,22 +46,12 @@ router.post('/add', (req, res, next) => {
      * ADD CODE HERE *
      *****************/
 
-    let newBook = new book
+    let newBook = new Books
     ({
         "Title": req.body.Title,
         "Price": req.body.Price,
         "Author": req.body.Author,
         "Genre": req.body.Genre
-    });
-
-    book.create(newBook, function(err: CallbackError)
-    {
-      if(err)
-      {
-        console.error(err);
-        res.end(err);
-      }
-      res.redirect('/books');
     })
 });
 
