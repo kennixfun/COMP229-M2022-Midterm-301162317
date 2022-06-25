@@ -1,5 +1,5 @@
 {
-  "name": "comp229-m2022-midterm-301162317",
+  "name": "comp229-m2022-midterm-typescript",
   "version": "0.0.4",
   "private": true,
   "scripts": {
@@ -53,10 +53,10 @@
     "ExpressJS",
     "EJS"
   ],
-  "author": "Yuen Ting Leung",
-  "license": "MIT",
+  "author": "Your Name Goes Here",
+  "license": "ISC",
   "bugs": {
-    "url": "https://comp229-m2022-midterm301162317.herokuapp.com/"
+    "url": ""
   },
   "homepage": ""
 }
