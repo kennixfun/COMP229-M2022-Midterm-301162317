@@ -18,12 +18,12 @@ const db = mongoose.connection; // alias for the mongoose connection
 db.on("error", function()
 {
   console.error("connection error");
-})
+});
 
 db.on("open", function()
 {
   console.log(`Connected to MongoDB at: ${(DBConfig.RemoteURI) ? DBConfig.HostName: "localhost"}`);
-})
+});
 
 // define routers
 import index from '../Routes/index'; // top level routes

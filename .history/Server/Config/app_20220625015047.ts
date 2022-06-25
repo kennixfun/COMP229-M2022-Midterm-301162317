@@ -8,22 +8,21 @@ import logger from 'morgan';
 // import "mongoose" - required for DB Access
 import mongoose, { mongo } from 'mongoose';
 
-import cors from 'cors';
-
 // URI
 import * as DBConfig from './db';
-mongoose.connect(DBConfig.RemoteURI || DBConfig.LocalURI);
-const db = mongoose.connection; // alias for the mongoose connection
 
+mongoose.connect(DBConfig.RemoteURI || DBConfig.LocalURI);
+
+const db = mongoose.connection; // alias for the mongoose connection
 db.on("error", function()
 {
   console.error("connection error");
-})
+});
 
 db.on("open", function()
 {
   console.log(`Connected to MongoDB at: ${(DBConfig.RemoteURI) ? DBConfig.HostName: "localhost"}`);
-})
+});
 
 // define routers
 import index from '../Routes/index'; // top level routes
