@@ -19,7 +19,7 @@ router.get('/books', (req, res, next) => {
                 books: books
             });
         }
-    });
+    }).sort({ Title: 1 });
 });
 router.get('/add', (req, res, next) => {
     res.render('books/details', {
@@ -30,10 +30,10 @@ router.get('/add', (req, res, next) => {
 });
 router.post('/add', (req, res, next) => {
     let newBook = new books_1.default({
-        "Title": req.body.booksTitle,
-        "Price": req.body.booksPrice,
-        "Author": req.body.booksAuthor,
-        "Genre": req.body.booksGenre
+        "Title": req.body.Title,
+        "Price": req.body.Price,
+        "Author": req.body.Author,
+        "Genre": req.body.Genre
     });
     books_1.default.create(newBook, function (err) {
         if (err) {

@@ -49,10 +49,10 @@ router.post('/add', (req, res, next) => {
 
     let newBook = new book
     ({
-        "Title": req.body.Title,
-        "Price": req.body.Price,
-        "Author": req.body.Author,
-        "Genre": req.body.Genre
+        "Title": req.body.booksTitle,
+        "Price": req.body.booksPrice,
+        "Author": req.body.booksAuthor,
+        "Genre": req.body.booksGenre
     });
 
     book.create(newBook, function(err: CallbackError)
