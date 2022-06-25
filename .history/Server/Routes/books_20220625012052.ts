@@ -82,7 +82,7 @@ router.get('/edit/:id', (req, res, next) => {
         console.error(err);
         res.end(err);
       }
-      res.render('/books/details', {title: 'Edit', page: 'edit', books: booksToEdit})
+      res.render('details', {title: 'Edit', page: 'edit', books: booksToEdit})
     });
 });
 
