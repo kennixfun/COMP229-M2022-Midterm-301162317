@@ -62,13 +62,13 @@ router.post('/edit/:id', (req, res, next) => {
         "Author": req.body.Author,
         "Genre": req.body.Genre
     });
-    books_1.default.updateOne({ _id: id, updateBooks, function(err) {
-            if (err) {
-                console.error(err);
-                res.end(err);
-            }
-            res.redirect('/books');
-        } });
+    books_1.default.updateOne({ _id: id }, updateBooks, function (err) {
+        if (err) {
+            console.error(err);
+            res.end(err);
+        }
+        res.redirect('/books');
+    });
 });
 router.get('/delete/:id', (req, res, next) => {
     let id = req.params.id;
