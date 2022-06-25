@@ -92,26 +92,7 @@ router.post('/edit/:id', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
-    let id = req.params.id;
 
-    let updateBooks = new book
-    ({
-      "_id": id,
-      "Title": req.body.Title,
-      "Price": req.body.Price,
-      "Author": req.body.Author,
-      "Genre": req.body.Genre
-    });
-
-    book.updateOne({_id: id, updateBooks, function(err: CallbackError)
-    {
-      if(err)
-      {
-        console.error(err)
-        res.end(err);
-      }
-      res.redirect('/books');
-    }})
 });
 
 // GET - process the delete by user id
@@ -120,18 +101,6 @@ router.get('/delete/:id', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
-
-    let id = req.params.id;
-
-    book.remove({_id: id}, function(err: CallbackError)
-    {
-      if(err)
-      {
-        console.error(err);
-        res.end(err);
-      }
-      res.redirect('/books');
-    })
 });
 
 

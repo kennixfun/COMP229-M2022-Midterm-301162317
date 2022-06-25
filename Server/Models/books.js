@@ -7,7 +7,6 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const Schema = mongoose_1.default.Schema;
 const BookSchema = new Schema({
     Title: String,
-    Description: String,
     Price: Number,
     Author: String,
     Genre: String
