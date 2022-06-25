@@ -38,7 +38,7 @@ const db = mongoose_1.default.connection;
 db.on("error", function () {
     console.error("connection error");
 });
-db.once("open", function () {
+db.on("open", function () {
     console.log(`Connected to MongoDB at: ${(DBConfig.RemoteURI) ? DBConfig.HostName : "localhost"}`);
 });
 const index_1 = __importDefault(require("../Routes/index"));
